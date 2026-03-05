@@ -21,5 +21,10 @@
     "android": {
       "package": "com.bartar.app"
     },
+    "extra": {
+      "eas": {
+        "projectId": "58e0d798-aee0-412a-8c95-d79c695cca6f"
+      }
+    }
   }
 }
