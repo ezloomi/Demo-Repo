@@ -1,19 +1,34 @@
 export default function mockPrices(barcode) {
+  const seed = (barcode || '')
+    .split('')
+    .reduce((sum, char) => sum + char.charCodeAt(0), 0);
+
+  const base = 12.5 + (seed % 7) * 0.85;
+
   return [
     {
       store: 'Amazon',
-      price: 12.99,
-      image: 'https://via.placeholder.com/60'
+      price: Number((base + 0.39).toFixed(2)),
+      delivery: 1,
+      stock: 'In stock',
     },
     {
       store: 'Walmart',
-      price: 13.49,
-      image: 'https://via.placeholder.com/60'
+      price: Number((base + 0.92).toFixed(2)),
+      delivery: 2,
+      stock: 'Limited stock',
     },
     {
       store: 'Target',
-      price: 14.29,
-      image: 'https://via.placeholder.com/60'
-    }
+      price: Number((base + 1.21).toFixed(2)),
+      delivery: 2,
+      stock: 'In stock',
+    },
+    {
+      store: 'Best Buy',
+      price: Number((base + 1.56).toFixed(2)),
+      delivery: 3,
+      stock: 'In stock',
+    },
   ].sort((a, b) => a.price - b.price);
 }

@@ -18,19 +18,23 @@
     "ios": {
       "bundleIdentifier": "com.bartar.app",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "Allow BARTAR to scan product barcodes."
       }
     },
     "android": {
-      "package": "com.bartar.app"
+      "package": "com.bartar.app",
+      "permissions": [
+        "CAMERA"
+      ]
     },
+    "plugins": [
+      "expo-camera"
+    ],
     "extra": {
       "eas": {
         "projectId": "58e0d798-aee0-412a-8c95-d79c695cca6f"
       }
-    },
-    "cli": {
-      "appVersionSource": "app.json"
     }
   }
 }
