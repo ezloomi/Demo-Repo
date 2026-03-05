@@ -1,1 +1,11 @@
 node_modules
+.expo
+.expo/*
+# macOS
+.DS_Store
+
+# build outputs
+web-build/
+android/
+ios/
+
