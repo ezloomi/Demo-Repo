@@ -1,0 +1,21 @@
+const fetch = require("node-fetch");
+
+const API_TOKEN = "YOUR_API_KEY";
+const ACTOR_ID = "lanky_quantifier/price-comparison-scraper"; // example actor
+
+const url = `https://api.apify.com/v2/acts/${ACTOR_ID}/run-sync-get-dataset-items?token=${API_TOKEN}`;
+
+fetch(url, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    query: "iPhone 15"
+  })
+})
+  .then(res => res.json())
+  .then(data => {
+    console.log("Results:", data);
+  })
+  .catch(err => console.error(err));
